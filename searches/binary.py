@@ -26,7 +26,7 @@ def binarySearch(a, target):
 			lowerBound = center
 			center = (upperBound + lowerBound) / 2
 			continue
-		elif target < a[center]:
+		if target < a[center]:
 			upperBound = center
 			center = (upperBound + lowerBound) / 2
 			continue
