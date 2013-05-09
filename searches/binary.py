@@ -11,8 +11,12 @@ def binarySearch(a, target):
 	3
 	>>> binarySearch([1, 3, 5, 7, 9, 11], 3)
 	1
+	>>> binarySearch(["five", "four", "one", "six", "three", "two"], "two")
+	5
+	>>> binarySearch([0, 1, 3, 4, 5], 2)
+	-1
 	"""
-	upperBound = len(a)-1
+	upperBound = len(a)
 	lowerBound = 0
 	center = len(a)/2
 	while upperBound - lowerBound > 1:
