@@ -1,5 +1,5 @@
-README
-------
+libuseful
+---------
 
 For users: this is a collection of sorts, searches, and other useful tools.
 
