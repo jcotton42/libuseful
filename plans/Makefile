@@ -1,7 +1,12 @@
-all: sorts searches
+.PHONY: all clean
+
+all: sorts.md searches.md
+
 clean:
 	rm *.html
-sorts:
+
+sorts.md:
 	markdown sorts.md > sorts.html
-searches:
+
+searches.md:
 	markdown searches.md > searches.html
