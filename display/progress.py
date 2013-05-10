@@ -26,7 +26,7 @@ class ProgressBar:
 		sys.stdout.write("[")
 		sys.stdout.write(self.fillchar * int(filled))
 		sys.stdout.write(self.blankchar * int(blanks))
-		if self.percent: sys.stdout.write("] %i%%" % percent)
+		if self.percent: sys.stdout.write("] %i%%     " % percent)
 		else: sys.stdout.write("]")
 		sys.stdout.write("\r")
 		sys.stdout.flush()
