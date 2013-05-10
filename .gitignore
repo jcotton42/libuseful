@@ -1,3 +1,17 @@
 *.pyc
 *.html
 *.pdf
+*.aux
+*.tex
+*.css
+*.js
+*.dvi
+*.ps
+*.idx
+*.ilg
+*.log
+*.out
+*.toc
+*.png
+*.ind
+*.txt
