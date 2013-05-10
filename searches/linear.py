@@ -1,5 +1,5 @@
 TARGET_NOT_FOUND = 1
-def linearSearch(a, target):
+def linearSearch(a, target, key=lambda x:x):
 	"""
 	Perform a linear search on a given list with the given
 	target. Returns TARGET_NOT_FOUND if the target was not
@@ -11,7 +11,7 @@ def linearSearch(a, target):
 	2
 	"""
 	for index, value in enumerate(a):
-		if value == target:
+		if key(value) == target:
 			return index
 	return TARGET_NOT_FOUND
 if __name__ == "__main__":

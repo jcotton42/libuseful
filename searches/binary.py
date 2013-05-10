@@ -1,5 +1,5 @@
 TARGET_NOT_FOUND = -1
-def binarySearch(a, target):
+def binarySearch(a, target, key=lambda x:x):
 	"""
 	Perform a binary search on a given list with the given
 	target. Returns TARGET_NOT_FOUND if the target was not
@@ -20,13 +20,13 @@ def binarySearch(a, target):
 	lowerBound = 0
 	center = len(a)/2
 	while upperBound - lowerBound > 1:
-		if target == a[center]:
+		if target == key(a[center]):
 			return center
-		if target > a[center]:
+		if target > key(a[center]):
 			lowerBound = center
 			center = (upperBound + lowerBound) / 2
 			continue
-		if target < a[center]:
+		if target < key(a[center]):
 			upperBound = center
 			center = (upperBound + lowerBound) / 2
 			continue
