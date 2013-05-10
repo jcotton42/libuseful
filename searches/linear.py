@@ -12,7 +12,7 @@ def linearSearch(a, target, key=lambda x:x):
 	"""
 	for index, value in enumerate(a):
 		if key(value) == target:
-			return index
+			return (index, value)
 	return TARGET_NOT_FOUND
 if __name__ == "__main__":
 	import doctest

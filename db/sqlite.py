@@ -11,6 +11,7 @@ class DatabaseConnection():
 		Query the database. Returns a list of dictionaries;
 		each column repesenting a key in the dictionary.
 		Example:
+
 		>>> conn = DatabaseConnection("example.db")
 		>>> res = conn.query("select * from example", one=True)
 		>>> res["age"]

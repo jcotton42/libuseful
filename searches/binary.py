@@ -21,7 +21,7 @@ def binarySearch(a, target, key=lambda x:x):
 	center = len(a)/2
 	while upperBound - lowerBound > 1:
 		if target == key(a[center]):
-			return center
+			return (center, a[center])
 		if target > key(a[center]):
 			lowerBound = center
 			center = (upperBound + lowerBound) / 2
