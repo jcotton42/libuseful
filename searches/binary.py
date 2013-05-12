@@ -1,3 +1,6 @@
+"""
+This module implements a very fast binary search.
+"""
 TARGET_NOT_FOUND = -1
 def binary_search(arr, target, key=lambda x:x):
     """

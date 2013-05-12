@@ -1,3 +1,6 @@
+"""
+This module implements the quicksort algorithm.
+"""
 from random import choice
 def quick_sort(arr, key=lambda x:x):
     """
