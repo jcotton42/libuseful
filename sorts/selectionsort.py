@@ -38,9 +38,9 @@ def selection_sort(arr):
     if arr == []: # No point in sorting an exmpty list
         return []
 
-    for maxIndex in range(len(arr) -1 , 0, -1):
-        maxPos = arr.index(max(arr[0:maxIndex + 1]), 0, maxIndex + 1)
-        arr[maxIndex], arr[maxPos] = arr[maxPos], arr[maxIndex]
+    for max_index in range(len(arr) -1 , 0, -1):
+        max_pos = arr.index(max(arr[0:max_index + 1]), 0, max_index + 1)
+        arr[max_index], arr[max_pos] = arr[max_pos], arr[max_index]
 
     return arr
 
