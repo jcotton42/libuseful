@@ -4,7 +4,7 @@ class ProgressBar:
     """
     Progress bar class. Displays text-based progress bars.
     """
-    def __init__(self, maximum=100, start=0, twidth=50)
+    def __init__(self, maximum=100, start=0, twidth=50):
         """
         Init method. Takes a maximum value, start value, 
         width, character to indicate filled, character
