@@ -6,6 +6,12 @@ class ProgressBar:
 	"""
 	def __init__(self, maximum=100, start=0, twidth=50,
 			fillchar="#", blankchar=" ", percent=True):
+		"""
+		Init method. Takes a maximum value, start value, 
+		width, character to indicate filled, character
+		to indicate blank, and whether or not to show
+		a percentage.
+		"""
 		self.maximum   = maximum
 		self.twidth    = twidth
 		self.ratio     = maximum / twidth

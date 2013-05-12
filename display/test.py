@@ -2,7 +2,7 @@ from progress import *
 from time import sleep
 from random import randint
 def test():
-	p = ProgressBar(100, twidth = 10)
+	p = ProgressBar(100, twidth = 120)
 	while True:
 		for i in range(101):
 			p.update(i)
