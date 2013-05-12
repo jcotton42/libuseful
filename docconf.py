@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# pylint: disable-all
 #
 # libuseful documentation build configuration file, created by
 # sphinx-quickstart on Sun May 12 12:08:51 2013.
