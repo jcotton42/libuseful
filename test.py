@@ -1,6 +1,7 @@
 """
 Testing script for libuseful
 """
+# pylint: disable-all
 from __future__ import print_function
 import searches 
 import searches.linear
