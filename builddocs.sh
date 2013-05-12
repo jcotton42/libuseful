@@ -16,6 +16,7 @@ sphinx-build -b html workspace/docs/source workspace/docs/
 pylint --persistent=y -f html workspace > workspace/lint/index.html
 [ -x workspace/tests ] || mkdir workspace/tests
 echo "<pre>" > workspace/tests/index.html
-echo "`python -m workspace.test`" >> workspace/tests/index.html
+failed=$(python -m workspace.test >> workspace/tests/index.html)
+echo Build failed? $failed
 echo "</pre>" >> workspace/tests/index.html
-exit 0
+exit $failed

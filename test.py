@@ -6,6 +6,7 @@ from __future__ import print_function, absolute_import
 from .searches import linear
 from .searches import binary
 from .sorts import quicksort
+import sys
 global passcount, failcount
 passcount = 0
 failcount = 0
@@ -58,3 +59,5 @@ def quicksort_test():
 test("quicksort", quicksort_test)
 ### End tests
 print("%i tests passed, %i tests failed" % (passcount, failcount))
+if failcount > 0:
+    sys.exit(1)
