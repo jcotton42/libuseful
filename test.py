@@ -2,12 +2,10 @@
 Testing script for libuseful
 """
 # pylint: disable-all
-from __future__ import print_function
-import searches 
-import searches.linear
-import searches.binary
-import sorts 
-import sorts.quicksort
+from __future__ import print_function, absolute_import
+from .searches import linear
+from .searches import binary
+from .sorts import quicksort
 global passcount, failcount
 passcount = 0
 failcount = 0
@@ -29,7 +27,7 @@ def linearsearch_test():
     """
     data = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
     target = 5
-    r = searches.linear.linear_search(data, target)
+    r = linear.linear_search(data, target)
     if r == (2, 5):
         return True
     else:
@@ -41,7 +39,7 @@ def binarysearch_test():
     """
     data = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
     target = 5
-    r = searches.linear.linear_search(data, target)
+    r = binary.binary_search(data, target)
     if r == (2, 5):
         return True
     else:
@@ -53,7 +51,7 @@ def quicksort_test():
     """
     data = [9, 7, 5, 3, 1]
     expected = [1, 3, 5, 7, 9]
-    if sorts.quicksort.quick_sort(data) == expected:
+    if quicksort.quick_sort(data) == expected:
         return True
     else:
         return False
