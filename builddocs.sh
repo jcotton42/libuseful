@@ -9,4 +9,4 @@ python -c 'import sys; print(sys.path)'
 sphinx-apidoc -F -f -H libuseful -A "Fox Wilson, Joshua Cotton" -o workspace/docs/source workspace
 sphinx-build -b html workspace/docs/source workspace/docs/
 [ -x workspace/lint ] || mkdir workspace/lint
-pylint -f html workspace > workspace/lint/index.html
+pylint --persistent=y -f html workspace > workspace/lint/index.html
