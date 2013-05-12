@@ -14,4 +14,8 @@ echo Done
 sphinx-build -b html workspace/docs/source workspace/docs/
 [ -x workspace/lint ] || mkdir workspace/lint
 pylint --persistent=y -f html workspace > workspace/lint/index.html
+[ -x workspace/tests ] || mkdir workspace/tests
+echo "<pre>" > workspace/tests/index.html
+python test.py >> workspace/tests/index.html
+echo "</pre>" >> workspace/tests/index.html
 exit 0
