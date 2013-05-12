@@ -1,19 +1,19 @@
 TARGET_NOT_FOUND = 1
-def linearSearch(a, target, key=lambda x:x):
+def linearSearch(arr, target, key=lambda x:x):
     """
     Perform a linear search on a given list with the given
     target. Returns TARGET_NOT_FOUND if the target was not
     found, or the the position of the target if it was
-    found.
+    found in the form of a tuple (position, object).
     Example:
 
-    >>> linearSearch([5, 2, 3, 1], 3)
+    >>> linearSearch([5, 2, 3, 1], 3)[0]
     2
     """
-    for index, value in enumerate(a):
+    for index, value in enumerate(arr):
         if key(value) == target:
             return (index, value)
-    return TARGET_NOT_FOUND
+    return (TARGET_NOT_FOUND, target)
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
