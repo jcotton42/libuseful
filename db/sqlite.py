@@ -5,7 +5,7 @@ class DatabaseConnection():
     You can query the database or update it.
     """
     def __init__(self, filename):
-        self.db = sqlite3.connect(filename)
+        self.dbase = sqlite3.connect(filename)
     def query(self, query, args=(), one=False):
         """
         Query the database. Returns a list of dictionaries;
@@ -19,20 +19,20 @@ class DatabaseConnection():
         >>> res["name"]
         u'Fox Wilson'
         """
-        cur = self.db.execute(query, args)
-        r = [dict((cur.description[idx][0], value)
+        cur = self.dbase.execute(query, args)
+        res = [dict((cur.description[idx][0], value)
             for idx, value in enumerate(row)) for row in cur.fetchall()
             ]
-        if not one: return r
-        return r[0] if r else None
+        if not one: return res
+        return res[0] if res else None
     def execute(self, query, args=()):
         """
         Execute a command on the database. All this does is
         remove the need for a seperate commit on the
         database.
         """
-        self.db.execute(query, args)
-        self.db.commit()
+        self.dbase.execute(query, args)
+        self.dbase.commit()
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
