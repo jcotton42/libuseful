@@ -21,17 +21,17 @@ def binary_search(arr, target, key=lambda x:x):
     """
     upper_bound = len(arr)
     lower_bound = 0
-    center = len(arr)/2
+    center = int(len(arr)/2)
     while upper_bound - lower_bound > 1:
         if target == key(arr[center]):
             return (center, arr[center])
         if target > key(arr[center]):
             lower_bound = center
-            center = (upper_bound + lower_bound) / 2
+            center = int((upper_bound + lower_bound) / 2)
             continue
         if target < key(arr[center]):
             upper_bound = center
-            center = (upper_bound + lower_bound) / 2
+            center = int((upper_bound + lower_bound) / 2)
             continue
     return (TARGET_NOT_FOUND, target)
 if __name__ == "__main__":
