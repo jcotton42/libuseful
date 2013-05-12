@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -r docs
 [ -x docs ] || mkdir docs
 [ -x docs/source ] || mkdir docs/source
 [ -x docs/html ] || mkdir docs/html
