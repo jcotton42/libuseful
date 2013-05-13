@@ -24,7 +24,7 @@ def test(name, func):
         else:
             print("Test '%s' FAILED" % name)
             failcount += 1
-    except Exception, e:
+    except Exception as e:
         print("In test '%s': FAILED" % name)
         print(e)
 
