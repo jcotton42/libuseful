@@ -11,7 +11,7 @@ import sys
 global passcount, failcount
 passcount = 0
 failcount = 0
-
+print("<pre>")
 def test(name, func):
     """
     Test a function.
@@ -25,7 +25,7 @@ def test(name, func):
             print("Test '%s' FAILED" % name)
             failcount += 1
     except Exception as e:
-        print("In test '%s': FAILED" % name)
+        print("In test '%s': FAILED: " % name)
         print(e)
 
 ### Start tests
