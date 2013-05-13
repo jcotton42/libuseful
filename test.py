@@ -47,11 +47,11 @@ def binarysearch_test():
 # Sorts
 def test_sort(sort):
     data = [9, 7, 5, 3, 1]
-        expected = [1, 3, 5, 7, 9]
-        if quicksort.quick_sort(data) == expected:
-            return True
-        else:
-            return False
+    expected = [1, 3, 5, 7, 9]
+    if quicksort.quick_sort(data) == expected:
+        return True
+    else:
+        return False
 test("binary search", binarysearch_test)
 def quicksort_test():
     """
