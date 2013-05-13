@@ -1,4 +1,3 @@
-#TODO (very low priority) Add thread support for faster sorts - Josh
 """
 This module implements the quicksort algorithm.
 """
