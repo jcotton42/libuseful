@@ -19,14 +19,14 @@ def test(name, func):
     global passcount, failcount
     try:
         if func():
-            print("Test '%s' passed" % name)
+            print("Test '%s' passed<br>" % name)
             passcount += 1
         else:
-            print("Test '%s' FAILED" % name)
+            print("Test '%s' FAILED<br>" % name)
             failcount += 1
     except Exception as e:
-        print("In test '%s': FAILED" % name)
-        print(e)
+        print("In test '%s': FAILED: " % name)
+        print(e + "<br>")
 
 ### Start tests
 def test_search(search):
