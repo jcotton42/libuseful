@@ -15,4 +15,4 @@ sphinx-build -b html workspace/docs/source workspace/docs/
 [ -x workspace/lint ] || mkdir workspace/lint
 pylint --persistent=y -f html workspace > workspace/lint/index.html
 [ -x workspace/tests ] || mkdir workspace/tests
-python -m workspace.test >> workspace/tests/index.html
+python -m workspace.test > workspace/tests/index.html
