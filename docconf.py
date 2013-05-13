@@ -43,7 +43,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'libuseful'
-copyright = 'Fox Wilson, Joshua Cotton 2013. All files licensed under the GNU GPL'
+copyright = 'Fox Wilson, Joshua Cotton 2013. All files licensed under the GNU GPL, version 3'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
