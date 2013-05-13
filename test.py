@@ -10,6 +10,7 @@ import sys
 global passcount, failcount
 passcount = 0
 failcount = 0
+
 def test(name, func):
     """
     Test a function.
@@ -21,6 +22,7 @@ def test(name, func):
     else:
         print("Test '%s' FAILED" % name)
         failcount += 1
+
 ### Start tests
 def test_search(search):
     """
@@ -33,37 +35,46 @@ def test_search(search):
         return True
     else:
         return False
+
 def linearsearch_test():
     """
     Test linear searching.
     """
     return test_search(linear.linear_search)
-test("linear search", linearsearch_test)
+
 def binarysearch_test():
     """
     Test binary searching.
     """
     return test_search(binary.binary_search)
+
 # Sorts
 def test_sort(sort):
+    """
+    Test a sort
+    """
     data = [9, 7, 5, 3, 1]
     expected = [1, 3, 5, 7, 9]
     if quicksort.quick_sort(data) == expected:
         return True
     else:
         return False
-test("binary search", binarysearch_test)
+
 def quicksort_test():
     """
     Test quicksorting.
     """
     return test_sort(quicksort.quick_sort)
-test("quicksort", quicksort_test)
+
 def selectionsort_test():
     """
     Test selection sorting
     """
     return test_sort(selectionsort.selection_sort)
+
+test("linear search", linearsearch_test)
+test("binary search", binarysearch_test)
+test("quicksort", quicksort_test)
 test("selection sort", selectionsort_test)
 ### End tests
 print("%i tests passed, %i tests failed" % (passcount, failcount))
