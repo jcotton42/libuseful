@@ -27,12 +27,12 @@ def test_search(search):
     Test a search.
     """
     data = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
-        target = 5
-        r = search(data, target)
-        if r == (2, 5):
-            return True
-        else:
-            return False
+    target = 5
+    r = search(data, target)
+    if r == (2, 5):
+        return True
+    else:
+        return False
 def linearsearch_test():
     """
     Test linear searching.
