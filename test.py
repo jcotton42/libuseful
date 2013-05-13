@@ -16,12 +16,16 @@ def test(name, func):
     Test a function.
     """
     global passcount, failcount
-    if func():
-        print("Test '%s' passed" % name)
-        passcount += 1
-    else:
-        print("Test '%s' FAILED" % name)
-        failcount += 1
+    try:
+        if func():
+            print("Test '%s' passed" % name)
+            passcount += 1
+        else:
+            print("Test '%s' FAILED" % name)
+            failcount += 1
+    except Exception, e:
+        print("In test '%s': FAILED" % name)
+        print(e)
 
 ### Start tests
 def test_search(search):
