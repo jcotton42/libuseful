@@ -17,15 +17,15 @@ def bubble_sort(arr):
     if arr == []: # No point in sorting an exmpty list
         return []
 
-	swapped = True
+    swapped = True
 
-	while swapped:
-		swapped = False
-		for index in range(1, len(arr)):
-			if arr[index - 1] > arr[index]:
-				arr[index - 1], arr[index] = arr[index], arr[index - 1]
-				swapped = True
-
+    while swapped:
+        swapped = False
+        for index in range(1, len(arr)):
+            if arr[index - 1] > arr[index]:
+                arr[index - 1], arr[index] = arr[index], arr[index - 1]
+                swapped = True
+    return arr
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
