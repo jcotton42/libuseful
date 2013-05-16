@@ -42,3 +42,17 @@ while the current index is greater than zero
 	decrement the current index
 return the sorted list
 </pre>
+
+## Insertion sort
+Algorithm:
+<pre>
+for each itemA in the reversed array
+    remove the item
+    for each itemB in the array
+        if itemA is less than itemB
+            insert itemB at the current position
+            end loop
+    otherwise add itemA to the array
+return the array
+</pre>
+
