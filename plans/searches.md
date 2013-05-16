@@ -32,3 +32,26 @@ while the difference between the upper and the lower bound is greater than 1
 		skip to the next iteration
 return the flag indicating that the target was not found
 </pre>
+
+# Searches GUI
+
+- Open files
+- Search by attribute
+
+<code>
+function parsefile
+    read the first line of the file
+    store column names
+    read the rest of the file
+    create a list of dictionaries (keys are column names)
+    store the list of dictionaries
+end function
+
+function search
+    read attribute from textbox
+    read search value from textbox
+    call binary_search with these values
+    display the result in a textbox
+end function
+</code>
+    
