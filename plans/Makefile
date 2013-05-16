@@ -1,4 +1,4 @@
-all: sorts searches master gui
+all: sorts searches index master gui
 
 %: %.md
 	markdown $< > $@.html
