@@ -56,3 +56,28 @@ for each itemA in the reversed array
 return the array
 </pre>
 
+## GUI
+Interface containing the following fields:
+
+* Input type - default is file and array, files must be in CSV format, matrix keys must be the first line (dropdown)
+    * File
+        * Array
+        * Matrix
+    * Type the data directly
+        * Array
+        * Matrix
+* Output type
+    * File
+    * Display
+* Input feild - textbox + Browse... button for file, large textbox for direct typing
+* Pivot value - matricies only
+* Sort type (dropdown)
+* Output feild - textbox + Browse... button for file, large textbox for direct typing
+* Sort (button)
+
+### Required variables for sort GUI
+
+Each file in the sort package must have two variables
+
+* `_sort_name` - the name of the algiothrim
+* `_sort` - variable that points to the sorting method or a lambda or method that calls the sorting method, must accept two argumetns, an array and a key
