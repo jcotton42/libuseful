@@ -1,4 +1,4 @@
-all: sorts searches master
+all: sorts searches index master
 
 %: %.md
 	markdown $< > $@.html
