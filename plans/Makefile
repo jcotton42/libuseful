@@ -1,7 +1,7 @@
-all: sorts searches
+all: sorts searches master
+
+%: %.md
+	markdown $< > $@.html
+
 clean:
 	rm *.html
-sorts:
-	markdown sorts.md > sorts.html
-searches:
-	markdown searches.md > searches.html
