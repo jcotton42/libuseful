@@ -11,7 +11,7 @@
 * Search button
 * Help button (pops up regex and macro (feature of the program) references)
 
-<code>
+<pre>
 function readfile
     get filename from text box
     open file
@@ -32,4 +32,4 @@ function help
     display help string
     wait until quit
 end function
-</code>
+</pre>

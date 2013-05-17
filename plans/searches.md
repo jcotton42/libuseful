@@ -38,7 +38,7 @@ return the flag indicating that the target was not found
 - Open files
 - Search by attribute
 
-<code>
+<pre>
 function parsefile
     read the first line of the file
     store column names
@@ -53,5 +53,5 @@ function search
     call binary_search with these values
     display the result in a textbox
 end function
-</code>
+</pre>
     
