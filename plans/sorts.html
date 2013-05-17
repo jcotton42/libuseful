@@ -72,29 +72,29 @@ return the array
 <p>Interface containing the following fields:</p>
 
 <ul>
-<li>Input type - default is file and array, files must be in CSV format, matrix keys must be the first line (dropdown)
+<li>Input type (var: inputType) - default is file and array, files must be in CSV format, matrix keys must be the first line (OptionMenu)
 <ul>
 <li>File
 <ul>
-<li>Array</li>
-<li>Matrix</li>
+<li>Array - val: 0</li>
+<li>Matrix - val: 1</li>
 </ul></li>
 <li>Type the data directly
 <ul>
-<li>Array</li>
-<li>Matrix</li>
+<li>Array - val: 2</li>
+<li>Matrix - val: 3</li>
 </ul></li>
 </ul></li>
-<li>Output type
+<li>Output type (var: outputType)
 <ul>
-<li>File</li>
-<li>Display</li>
+<li>File - val: 0</li>
+<li>Display - val: 1</li>
 </ul></li>
-<li>Input feild - textbox + Browse... button for file, large textbox for direct typing</li>
-<li>Pivot value - matricies only</li>
-<li>Sort type (dropdown)</li>
-<li>Output feild - textbox + Browse... button for file, large textbox for direct typing</li>
-<li>Sort (button)</li>
+<li>Input feild (var: inputFeild) - textbox + Browse... button for file, large textbox for direct typing</li>
+<li>Pivot value (var: pivotValue) - matricies only</li>
+<li>Sort type (var: sortType, options = sortTypes) (OptionMenu)</li>
+<li>Output feild (var: outputFeild) - textbox + Browse... button for file, large textbox for direct typing</li>
+<li>Sort (var: sortBtn, command = sortTypes[sortType]) (button)</li>
 </ul>
 
 <h3>Required variables for sort GUI</h3>
@@ -102,6 +102,15 @@ return the array
 <p>Each file in the sort package must have two variables</p>
 
 <ul>
-<li><code>_sort_name</code> - the name of the algiothrim</li>
+<li><code>_sort_name</code> - the name of the algorithm</li>
 <li><code>_sort</code> - variable that points to the sorting method or a lambda or method that calls the sorting method, must accept two argumetns, an array and a key</li>
 </ul>
+
+<h3>Setting up the interface</h3>
+
+<pre>
+foreach module in the sorts package
+    get and store the values of _sort_name and _sort
+    add an element to sortTypes with key _sort_name and value _sort
+end foreach
+</pre>
