@@ -1,4 +1,5 @@
-*.pyc
+plans/*.html
+__pycache__
 *.pdf
 *.aux
 *.tex
