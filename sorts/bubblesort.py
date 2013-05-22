@@ -26,6 +26,11 @@ def bubble_sort(arr):
                 arr[index - 1], arr[index] = arr[index], arr[index - 1]
                 swapped = True
     return arr
+
+def _sort(*args, **kwargs):
+    bubble_sort(*args, **kwargs)
+
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
+
