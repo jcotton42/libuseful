@@ -6,6 +6,7 @@ from random import choice
 def quick_sort(arr, key=lambda x:x):
     """
     Perform a quicksort on a given list. Return the sorted list.
+    @return Sorted list
     Example:
 
     >>> quick_sort([1, 5, 7, 2, 3, 4, 1])
