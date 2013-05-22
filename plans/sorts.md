@@ -59,25 +59,32 @@ return the array
 ## GUI
 Interface containing the following fields:
 
-* Input type - default is file and array, files must be in CSV format, matrix keys must be the first line (dropdown)
+* Input type (var: inputType) - default is file and array, files must be in CSV format, matrix keys must be the first line (OptionMenu)
     * File
-        * Array
-        * Matrix
+        * Array - val: 0
+        * Matrix - val: 1
     * Type the data directly
-        * Array
-        * Matrix
-* Output type
-    * File
-    * Display
-* Input feild - textbox + Browse... button for file, large textbox for direct typing
-* Pivot value - matricies only
-* Sort type (dropdown)
-* Output feild - textbox + Browse... button for file, large textbox for direct typing
-* Sort (button)
+        * Array - val: 2
+        * Matrix - val: 3
+* Output type (var: outputType)
+    * File - val: 0
+    * Display - val: 1
+* Input feild (var: inputFeild) - textbox + Browse... button for file, large textbox for direct typing
+* Pivot value (var: pivotValue) - matricies only
+* Sort type (var: sortType, options = sortTypes) (OptionMenu)
+* Output feild (var: outputFeild) - textbox + Browse... button for file, large textbox for direct typing
+* Sort (var: sortBtn, command = sortTypes[sortType]) (button)
 
 ### Required variables for sort GUI
-
 Each file in the sort package must have two variables
 
-* `_sort_name` - the name of the algiothrim
+* `_sort_name` - the name of the algorithm
 * `_sort` - variable that points to the sorting method or a lambda or method that calls the sorting method, must accept two argumetns, an array and a key
+
+### Setting up the interface
+<pre>
+foreach module in the sorts package
+    get and store the values of _sort_name and _sort
+    add an element to sortTypes with key _sort_name and value _sort
+end foreach
+</pre>
