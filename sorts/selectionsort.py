@@ -7,7 +7,7 @@ from __future__ import print_function
 def selection_sort(arr):
     """
     Perform a selection sort on a given list. Return the sorted list.
-    @return Sorted list
+    :returns: Sorted list
     Example:
 
     >>> selection_sort([1, 5, 7, 2, 3, 4, 1])

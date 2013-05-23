@@ -7,7 +7,7 @@ from __future__ import print_function
 def bubble_sort(arr):
     """
     Perform a bubble sort on a given list. Return the sorted list.
-    @return Sorted list
+    :returns: Sorted list
     Example:
 
     >>> bubble_sort([1, 5, 7, 2, 3, 4, 1])
