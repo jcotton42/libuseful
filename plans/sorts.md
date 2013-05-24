@@ -79,7 +79,7 @@ Interface containing the following fields:
 Each file in the sort package must have two variables
 
 * `_sort_name` - the name of the algorithm
-* `_sort` - variable that points to the sorting method or a lambda or method that calls the sorting method, must accept two argumetns, an array and a key
+* `_sort` - variable that points to the sorting method or a lambda or method that calls the sorting method, must accept two argumetns, *args and **kwargs
 
 ### Setting up the interface
 <pre>

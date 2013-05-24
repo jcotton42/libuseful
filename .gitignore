@@ -14,3 +14,4 @@ __pycache__
 *.toc
 *.png
 *.ind
+*.pyc
