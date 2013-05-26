@@ -1,4 +1,6 @@
 from Tkinter import *
+_gui = True
+_gui_name = "Searches"
 class SearchesGui(Tk):
     def __init__(self, *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
