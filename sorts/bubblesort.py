@@ -37,4 +37,3 @@ _sort_name = "Bubble sort"
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
-

@@ -69,11 +69,11 @@ Interface containing the following fields:
 * Output type (var: outputType)
     * File - val: 0
     * Display - val: 1
-* Input feild (var: inputFeild) - textbox + Browse... button for file, large textbox for direct typing
+* Input field (var: inputField) - textbox + Browse... button for file, large textbox for direct typing
 * Pivot value (var: pivotValue) - matricies only
 * Sort type (var: sortType, options = sortTypes) (OptionMenu)
-* Output feild (var: outputFeild) - textbox + Browse... button for file, large textbox for direct typing
-* Sort (var: sortBtn, command = sortTypes[sortType]) (button)
+* Output field (var: outputField) - textbox + Browse... button for file, large textbox for direct typing
+* Sort (var: sortData, command = sortTypes[sortType]) (button)
 
 ### Required variables for sort GUI
 Each file in the sort package must have two variables
