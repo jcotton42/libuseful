@@ -4,7 +4,7 @@ This module implements the selection sort algorithim
 
 from __future__ import print_function
 
-def selection_sort(arr):
+def selection_sort(arr, key=lambda x:x):
     """
     Perform a selection sort on a given list. Return the sorted list.
     Example:
@@ -20,7 +20,7 @@ def selection_sort(arr):
         return []
 
     for max_index in range(len(arr) -1 , 0, -1):
-        max_pos = arr.index(max(arr[0:max_index + 1]), 0, max_index + 1)
+        max_pos = arr.index(max(arr[0:max_index + 1], key=key), 0, max_index + 1)
         arr[max_index], arr[max_pos] = arr[max_pos], arr[max_index]
 
     return arr
