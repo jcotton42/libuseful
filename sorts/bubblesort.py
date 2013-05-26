@@ -30,7 +30,9 @@ def bubble_sort(arr):
     return arr
 
 def _sort(*args, **kwargs):
-    bubble_sort(*args, **kwargs)
+    return bubble_sort(*args, **kwargs)
+
+_sort_name = "Bubble sort"
 
 if __name__ == '__main__':
     import doctest
