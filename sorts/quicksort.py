@@ -27,6 +27,11 @@ def quick_sort(arr, key=lambda x:x):
     greater = [i for i in arr if key(i) > pivot] # And greater than the pivot
     return quick_sort(less) + equal + quick_sort(greater) # Recursively sort
 
+def _sort(*args, **kwargs):
+    return quick_sort(*args, **kwargs)
+
+_sort_name = "Quick sort"
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()

@@ -25,6 +25,11 @@ def selection_sort(arr):
 
     return arr
 
+def _sort(*args, **kwargs):
+    return selection_sort(*args, **kwargs)
+
+_sort_name = "Selection sort"
+
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
