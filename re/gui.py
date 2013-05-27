@@ -48,8 +48,12 @@ class ReGui(Tk):
 
         Button(self, text='Search', command=self.reSearch).grid(row=8, column=0, sticky=W)
 
-        Button(self, text='Help', command=self.getHelp).grid(row=8, column=4, sticky=E)
+        Button(self, text='Help', command=lambda: ReHelp()).grid(row=8, column=4, sticky=E)
 
+        self.bind('<F1>', lambda evt: ReHelp())
+
+        self.lift()
+        self.focus()
         self.mainloop()
 
     def getinputfiles(self):
@@ -63,18 +67,32 @@ class ReGui(Tk):
             self.data = ''.join(inputFile.readlines())
 
     def reSearch(self):
-        matches = re.findall(self.reEntry.get(), self.data)
-        self.reMatches.delete(0, END)
+        self.loadfile()
+        matches = re.findall(self.reEntry.get('1.0', END), self.data)
+        self.reMatches.delete('1.0', END)
         if len(matches) == 0:
-            self.reMatches.insert(0, 'No mathces.')
+            self.reMatches.insert('1.0', 'No mathces.')
             return
-        self.reMatches.insert(0, '\n'.join(matches))
+        self.reMatches.insert('1.0', '\n'.join(matches))
 
-    def getHelp(self):
-        helpWin = Toplevel(self)
-        Label(helpWin, text="""
-Hello there
-        """).grid(row=0, column=0, sticky=N+W)
+class ReHelp(Toplevel):
+    def __init__(self, *args, **kwargs):
+        Toplevel.__init__(self, *args, **kwargs)
+
+        Label(self, justify=LEFT, text="""
+Regex quick ref
+* - Zero or more instances of the previous regex
+? - Zero or one instances of the previous regex
+[abc] - Match a, b, or c
+[^abc] - Match anytning but a, b, or c
+^abc - Match abc at the beginnig of a line
+abc$ - Match abc at the end of a line
+. - Match any character except newline
+For more search the web for 'python re'
+""".strip()).grid(row=0, column=0, sticky=W)
+
+        self.lift(self.master)
+        self.focus()
 
 def main():
     ReGui()
