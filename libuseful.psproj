@@ -36,8 +36,12 @@ FileName=$[Project-Path]re\__init__.py
 ClassName=TProjectFileNode
 FileName=$[Project-Path]re\__main__.py
 
+[Project\ChildNodes\Node0\ChildNodes\Node1\ChildNodes\Node2]
+ClassName=TProjectFileNode
+FileName=$[Project-Path]re\gui.py
+
 [Project\ChildNodes\Node0\ChildNodes\Node1\ChildNodes]
-Count=2
+Count=3
 
 [Project\ChildNodes\Node0\ChildNodes\Node2]
 ClassName=TProjectFolderNode
