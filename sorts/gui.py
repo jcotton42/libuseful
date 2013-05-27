@@ -1,5 +1,7 @@
 from Tkinter import *
-import os
+from tkFileDialog import askopenfilename, asksaveasfilename
+from tkMessageBox import showerror, showinfo
+import os, csv
 
 class SortsGui(Tk):
     def __init__(self, *args, **kwargs):
@@ -8,12 +10,11 @@ class SortsGui(Tk):
         self.data = None # the data to sort
         # Create fields
         self.inputType = StringVar(self) # type of data and where to take it from
-        self.outputType = None # where to put the data
-        self.inputField = None # set later depending on options
-        self.pivotValue = None # set later depending on options
+        self.outputType = StringVar(self) # where to put the data
+        self.inputField = Entry(self) # filename for input file
+        self.pivotValue = Entry(self) # pivot value for matrix sort
         self.sortType = StringVar(self) # which sort to use
-        self.outputField = None # set later depending on options
-        self.sortData = None # create later
+        self.outputField = Entry(self) # filename for output file
         self.sortTypes = dict() # holds the names and sort methods
 
         # Get sort types - this is a kludge, see if there's a better way
@@ -31,22 +32,105 @@ class SortsGui(Tk):
                     else: sortName = modName
                     self.sortTypes[sortName] = mod._sort
 
+        # Layout elemetns
+
         os.chdir(old_dir)
 
-        Label(self, text = 'Input type').pack()
-        OptionMenu(self, self.inputType, 'Array', 'Matrix')
+        Label(self, text ='Sort type: ').grid(row=0, column=0, sticky=W)
+        OptionMenu(self, self.sortType, self.sortTypes.keys()[0], *self.sortTypes.keys()[1:]).grid(row=0, column=1, sticky=W)
 
-        Label(self, text = 'Sort type').pack()
-        OptionMenu(self, self.sortType, self.sortTypes.keys()[0], *self.sortTypes.keys()[1:]).pack(side = 'right')
+        Label(self, text='Input type: ').grid(row=1, column=0, sticky=W)
+        OptionMenu(self, self.inputType, 'List', 'Dictionary').grid(row=1, column=1, sticky=W)
+
+        Label(self, text='Output type: ').grid(row=2, column=0, sticky=W)
+        OptionMenu(self, self.outputType, 'File').grid(row=2, column=1, sticky=W)
+
+        Label(self, text='Input file: ').grid(row=3, column=0, sticky=W)
+        self.inputField.grid(row=3, column=1, sticky=W)
+        Button(self, text='Browse...', command=self.getinputfile).grid(row=3, column=2, sticky=W)
+
+        Label(self, text='Output file: ').grid(row=4, column=0, sticky=W)
+        self.outputField.grid(row=4, column=1, sticky=W)
+        Button(self, text='Browse...', command=self.getoutputfile).grid(row=4, column=2, sticky=W)
+
+        Label(self, text='Pivot value: ').grid(row=5, column=0, sticky=W)
+        self.pivotValue.grid(row=5, column=1, sticky=W)
+
+        Button(self, text='Sort', command=self.sortdata).grid(row=6, column=0, sticky=W)
+
         self.mainloop()
 
-    def loadfile(self, fileName, csvData = None, sep = ','):
-        inputData = open(fileName, 'r')
+    def loadfile(self, fileName, csvData = None, **fmtparams):
         if fileName.endswith('.csv') and csvData is None: csvData = True
-        if self.inputType.get() == 'Array':
-            for line in inputData.readlines():
+        with open(fileName, 'r') as inputFile:
+            if self.inputType.get() == 'List':
+                self.data = []
                 if csvData:
-                    for
+                    for row in csv.reader(inputFile, **fmtparams):
+                        map(self.data.append, row)
+                else:
+                    for line in inputFile.readlines():
+                        self.data.append(line)
+            elif self.inputType.get() == 'Dictionary':
+                self.data = dict()
+                inputFile.close()
+                raise NotImplementedError('Dictionary support not ready yet')
+
+    def savefile(self, fileName, csvData = None, **fmtparams):
+        if fileName.endswith('.csv') and csvData is None: csvData = True
+        with open(fileName, 'w') as outputFile:
+            if self.inputType.get() == 'List': # That is *not* a typo, output type should match input type
+                if csvData:
+                    tmp = csv.writer(outputFile, **fmtparams)
+                    tmp.writerow(self.data)
+                else:
+                    map(outputFile.write, self.data)
+            elif self.inputType.get() == 'Dictionary':
+                outputFile.close()
+                raise NotImplementedError('Dictionary support not ready yet')
+
+    def getinputfile(self):
+        fileName = askopenfilename()
+        if fileName == '': return
+        self.inputField.delete(0, END)
+        self.inputField.insert(0, fileName)
+
+    def getoutputfile(self):
+        fileName = asksaveasfilename()
+        if fileName == '': return
+        self.outputField.delete(0, END)
+        self.outputField.insert(0, fileName)
+
+    def sortdata(self):
+        # Check the fields
+        # This is where I wish ptyhon had a switch statment, oh well
+        if self.sortType.get() == '':
+            showerror('Missing sort type', 'Please specify a sort type')
+            return
+        if self.inputType.get() == '':
+            showerror('Missing input type', 'Please specify an input type')
+            return
+        if self.outputType.get() == '':
+            showerror('Missing output type', 'Please specify an output type')
+            return
+        if self.inputField.get() == '':
+            showerror('Missing input filename', 'Please specify an input filename')
+            return
+        if self.outputField.get() == '':
+            showerror('Missing input filename', 'Please specify an output filename')
+            return
+        if self.pivotValue.get() == '' and self.inputType.get() == 'Dictionary':
+            showerror('Missing pivot value with dictionary', 'Please specify a pivot value or switch to list')
+            return
+        # If we reach here all the fields are good
+        self.loadfile(self.inputField.get())
+
+        if self.inputType.get() == 'List':
+            self.data = self.sortTypes[self.sortType.get()](self.data)
+        elif self.inputType.get() == 'Dictionary':
+            self.data = self.sortTypes[self.sortType.get()](self.data, key = lambda x,y=self.pivotValue.get(): x[y])
+
+        self.savefile(self.outputField.get())
 
 def main():
     SortsGui()

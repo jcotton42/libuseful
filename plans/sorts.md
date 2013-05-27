@@ -59,6 +59,7 @@ return the array
 ## GUI
 Interface containing the following fields:
 
+* Sort type (var: sortType, options = sortTypes) (OptionMenu)
 * Input type (var: inputType) - default is file and array, files must be in CSV format, matrix keys must be the first line (OptionMenu)
     * File
         * Array - val: 0
@@ -70,9 +71,8 @@ Interface containing the following fields:
     * File - val: 0
     * Display - val: 1
 * Input field (var: inputField) - textbox + Browse... button for file, large textbox for direct typing
-* Pivot value (var: pivotValue) - matricies only
-* Sort type (var: sortType, options = sortTypes) (OptionMenu)
 * Output field (var: outputField) - textbox + Browse... button for file, large textbox for direct typing
+* Pivot value (var: pivotValue) - matricies only
 * Sort (var: sortData, command = sortTypes[sortType]) (button)
 
 ### Required variables for sort GUI
