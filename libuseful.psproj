@@ -26,76 +26,99 @@ Count=2
 
 [Project\ChildNodes\Node0\ChildNodes\Node1]
 ClassName=TProjectFolderNode
-Name=searches
+Name=re
 
 [Project\ChildNodes\Node0\ChildNodes\Node1\ChildNodes\Node0]
 ClassName=TProjectFileNode
-FileName=$[Project-Path]searches\__init__.py
+FileName=$[Project-Path]re\__init__.py
 
 [Project\ChildNodes\Node0\ChildNodes\Node1\ChildNodes\Node1]
 ClassName=TProjectFileNode
-FileName=$[Project-Path]searches\binary.py
-
-[Project\ChildNodes\Node0\ChildNodes\Node1\ChildNodes\Node2]
-ClassName=TProjectFileNode
-FileName=$[Project-Path]searches\linear.py
+FileName=$[Project-Path]re\__main__.py
 
 [Project\ChildNodes\Node0\ChildNodes\Node1\ChildNodes]
-Count=3
+Count=2
 
 [Project\ChildNodes\Node0\ChildNodes\Node2]
 ClassName=TProjectFolderNode
-Name=sorts
+Name=searches
 
 [Project\ChildNodes\Node0\ChildNodes\Node2\ChildNodes\Node0]
 ClassName=TProjectFileNode
-FileName=$[Project-Path]sorts\__init__.py
+FileName=$[Project-Path]searches\__init__.py
 
 [Project\ChildNodes\Node0\ChildNodes\Node2\ChildNodes\Node1]
 ClassName=TProjectFileNode
-FileName=$[Project-Path]sorts\__main__.py
+FileName=$[Project-Path]searches\__main__.py
 
 [Project\ChildNodes\Node0\ChildNodes\Node2\ChildNodes\Node2]
 ClassName=TProjectFileNode
-FileName=$[Project-Path]sorts\bubblesort.py
+FileName=$[Project-Path]searches\binary.py
 
 [Project\ChildNodes\Node0\ChildNodes\Node2\ChildNodes\Node3]
 ClassName=TProjectFileNode
-FileName=$[Project-Path]sorts\gui.py
+FileName=$[Project-Path]searches\gui.py
 
 [Project\ChildNodes\Node0\ChildNodes\Node2\ChildNodes\Node4]
 ClassName=TProjectFileNode
+FileName=$[Project-Path]searches\linear.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node2\ChildNodes]
+Count=5
+
+[Project\ChildNodes\Node0\ChildNodes\Node3]
+ClassName=TProjectFolderNode
+Name=sorts
+
+[Project\ChildNodes\Node0\ChildNodes\Node3\ChildNodes\Node0]
+ClassName=TProjectFileNode
+FileName=$[Project-Path]sorts\__init__.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node3\ChildNodes\Node1]
+ClassName=TProjectFileNode
+FileName=$[Project-Path]sorts\__main__.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node3\ChildNodes\Node2]
+ClassName=TProjectFileNode
+FileName=$[Project-Path]sorts\bubblesort.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node3\ChildNodes\Node3]
+ClassName=TProjectFileNode
+FileName=$[Project-Path]sorts\gui.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node3\ChildNodes\Node4]
+ClassName=TProjectFileNode
 FileName=$[Project-Path]sorts\quicksort.py
 
-[Project\ChildNodes\Node0\ChildNodes\Node2\ChildNodes\Node5]
+[Project\ChildNodes\Node0\ChildNodes\Node3\ChildNodes\Node5]
 ClassName=TProjectFileNode
 FileName=$[Project-Path]sorts\selectionsort.py
 
-[Project\ChildNodes\Node0\ChildNodes\Node2\ChildNodes]
+[Project\ChildNodes\Node0\ChildNodes\Node3\ChildNodes]
 Count=6
-
-[Project\ChildNodes\Node0\ChildNodes\Node3]
-ClassName=TProjectFileNode
-FileName=$[Project-Path]__init__.py
 
 [Project\ChildNodes\Node0\ChildNodes\Node4]
 ClassName=TProjectFileNode
-FileName=$[Project-Path]__main__.py
+FileName=$[Project-Path]__init__.py
 
 [Project\ChildNodes\Node0\ChildNodes\Node5]
 ClassName=TProjectFileNode
-FileName=$[Project-Path]docconf.py
+FileName=$[Project-Path]__main__.py
 
 [Project\ChildNodes\Node0\ChildNodes\Node6]
 ClassName=TProjectFileNode
-FileName=$[Project-Path]gui.py
+FileName=$[Project-Path]docconf.py
 
 [Project\ChildNodes\Node0\ChildNodes\Node7]
+ClassName=TProjectFileNode
+FileName=$[Project-Path]gui.py
+
+[Project\ChildNodes\Node0\ChildNodes\Node8]
 ClassName=TProjectFileNode
 FileName=$[Project-Path]test.py
 
 [Project\ChildNodes\Node0\ChildNodes]
-Count=8
+Count=9
 
 [Project\ChildNodes\Node1]
 ClassName=TProjectRunConfiguationsNode
