@@ -1,5 +1,5 @@
 from Tkinter import *
-
+from binary import *
 class SearchesGui(Tk):
     def __init__(self, *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
@@ -31,13 +31,19 @@ class SearchesGui(Tk):
 
     def loadfile(self):
         f = open(self.file_field.get())
-        items = [i[:-1] for i in f.readlines()]
-        for i in items:
+        self.litems = [i[:-1] for i in f.readlines()]
+        self.litems.sort()
+        for i in self.litems:
             self.items.insert(END, i)
         f.close()
 
     def do_search(self):
-        pass
+        x = binary_search(self.litems, self.to_search_field.get())[0]
+        self.items.selection_set(x)
+        self.items.see(x)
 
 def main():
     SearchesGui()
+
+if __name__ == '__main__':
+    main()
