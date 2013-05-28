@@ -53,7 +53,6 @@ class SearchesGui(Tk):
             return
         self.file_field.delete(0, END)
         self.file_field.insert(0, x)
-        self.loadfile()
         pass
 
     def do_bsearch(self):
