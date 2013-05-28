@@ -1,8 +1,9 @@
+from __future__ import absolute_import
 from Tkinter import *
 from tkFileDialog import *
 from tkMessageBox import *
-from binary import *
-from linear import *
+from .binary import *
+from .linear import *
 class SearchesGui(Tk):
     def __init__(self, *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
