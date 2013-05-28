@@ -1,6 +1,5 @@
 from Tkinter import *
 import os, sys
-
 class MainGui(Tk):
     def __init__(self, *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
@@ -25,6 +24,4 @@ class MainGui(Tk):
         os.chdir(old_dir)   # Change to where we were
 
         self.mainloop()
-
-def main():
-    MainGui()
+MainGui()
