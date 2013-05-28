@@ -48,7 +48,6 @@ class SearchesGui(Tk):
 
     def pickfile(self):
         x = askopenfilename()
-        print x
         if x == '':
             return
         self.file_field.delete(0, END)
