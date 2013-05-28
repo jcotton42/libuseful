@@ -88,7 +88,7 @@ class ReGui(Tk):
         matches = re.findall(self.reEntry.get('1.0', END), self.data, re.MULTILINE)
         self.reMatches.delete('1.0', END)
         if len(matches) == 0:
-            self.reMatches.insert('1.0', 'No mathces.')
+            self.reMatches.insert('1.0', 'No matches.')
             return
         self.reMatches.insert('1.0', '\n'.join(matches))
 
@@ -100,7 +100,7 @@ class ReHelp(Toplevel):
         Toplevel.__init__(self, *args, **kwargs)
 
         Label(self, justify=LEFT, text="""
-Regex quick ref
+Regex quick reference
 * - Zero or more instances of the previous regex
 ? - Zero or one instances of the previous regex
 [abc] - Match a, b, or c
@@ -116,3 +116,5 @@ For more search the web for 'python re'
 
 def main():
     ReGui()
+
+main()
