@@ -1,7 +1,7 @@
 """
 This module implements a simple linear search.
 """
-TARGET_NOT_FOUND = 1
+TARGET_NOT_FOUND = -1
 def linear_search(arr, target, key=lambda x:x):
     """
     Perform a linear search on a given list with the given
