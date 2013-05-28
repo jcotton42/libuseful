@@ -45,7 +45,7 @@ class SearchesGui(Tk):
         for i in self.litems:
             self.items.insert(END, i)
         f.close()
-    
+
     def pickfile(self):
         x = askopenfilename()
         print x
@@ -53,9 +53,9 @@ class SearchesGui(Tk):
             return
         self.file_field.delete(0, END)
         self.file_field.insert(0, x)
-        pass
 
     def do_bsearch(self):
+        self.loadfile()
         self.items.selection_clear(0, END)
         x = binary_search(self.litems, self.to_search_field.get())[0]
         if x is -1:
@@ -64,6 +64,7 @@ class SearchesGui(Tk):
         self.items.see(x)
 
     def do_lsearch(self):
+        self.loadfile()
         self.items.selection_clear(0, END)
         x = linear_search(self.litems, self.to_search_field.get())[0]
         if x is -1:
