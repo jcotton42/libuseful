@@ -20,8 +20,6 @@ class MainGui(Tk):
                     if '_gui_name' in mod.__dict__: button_name = mod._gui_name
                     else: button_name = name
                     Button(master = self, text = button_name, command = mod.main).pack()
-
         os.chdir(old_dir)   # Change to where we were
-
         self.mainloop()
 MainGui()
