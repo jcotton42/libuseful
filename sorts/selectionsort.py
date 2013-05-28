@@ -14,14 +14,18 @@ def selection_sort(arr, key=lambda x:x):
     >>> selection_sort(['a', 'd', 'b', 'c'])
     ['a', 'b', 'c', 'd']
 
+    :param arr: The list to sort
+    :type arr: list
+    :param key: a method or lambda that returns the key value when sorting dictionaries
+    :type key: function
     :returns: Sorted list
     """
     if arr == []: # No point in sorting an exmpty list
         return []
 
     for max_index in range(len(arr) -1 , 0, -1):
-        max_pos = arr.index(max(arr[0:max_index + 1], key=key), 0, max_index + 1)
-        arr[max_index], arr[max_pos] = arr[max_pos], arr[max_index]
+        max_pos = arr.index(max(arr[0:max_index + 1], key=key), 0, max_index + 1) # get the first index of the largest list member
+        arr[max_index], arr[max_pos] = arr[max_pos], arr[max_index] # swap
 
     return arr
 

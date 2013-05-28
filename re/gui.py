@@ -1,3 +1,6 @@
+"""
+This is the gui for the regular expression module
+"""
 #TODO: multi-file search (use listbox for filenames)
 #TODO: re flags support
 from Tkinter import *
@@ -5,6 +8,9 @@ from tkFileDialog import askopenfilename
 import re
 
 class ReGui(Tk):
+    """
+    Main window of the gui
+    """
     def __init__(self, *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
 
@@ -57,18 +63,29 @@ class ReGui(Tk):
         self.mainloop()
 
     def getinputfiles(self):
-        fileName = askopenfilename()
-        if fileName == '': return
-        self.inputField.delete(0, END)
+        """
+        Asks for a filename using an open dialog and sets the text of self.inputField
+        Does not erase field if Cancel is pressed
+        """
+        fileName = askopenfilename() # open an open file dialog, ask for the name
+        if fileName == '': return # pressing Cancel returns ''
+        self.inputField.delete(0, END) # empty the field
         self.inputField.insert(0, fileName)
 
     def loadfile(self):
+        """
+        Loads the file in the self.data string variable
+        """
         with open(self.inputField.get(), 'r') as inputFile:
             self.data = ''.join(inputFile.readlines())
 
     def reSearch(self):
+        """
+        Applies the regualr expression to the file and shows the matches in the
+        match box
+        """
         self.loadfile()
-        matches = re.findall(self.reEntry.get('1.0', END), self.data)
+        matches = re.findall(self.reEntry.get('1.0', END), self.data, re.MULTILINE)
         self.reMatches.delete('1.0', END)
         if len(matches) == 0:
             self.reMatches.insert('1.0', 'No mathces.')
@@ -76,6 +93,9 @@ class ReGui(Tk):
         self.reMatches.insert('1.0', '\n'.join(matches))
 
 class ReHelp(Toplevel):
+    """
+    Class for the help window
+    """
     def __init__(self, *args, **kwargs):
         Toplevel.__init__(self, *args, **kwargs)
 
