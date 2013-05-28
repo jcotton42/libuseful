@@ -9,11 +9,5 @@ python -c 'import sys; print(sys.path)'
 sphinx-apidoc -F -f -H libuseful -o workspace/docs/source workspace
 echo Copying docconf
 cp workspace/docconf.py workspace/docs/source/conf.py
-cat workspace/docs/source/conf.py
 echo Done
 sphinx-build -b html workspace/docs/source workspace/docs/
-[ -x workspace/lint ] || mkdir workspace/lint
-pylint --persistent=y -f html workspace > workspace/lint/index.html
-rm -r workspace/tests
-[ -x workspace/tests ] || mkdir workspace/tests
-python -m workspace.test > workspace/tests/index.html
