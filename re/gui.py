@@ -85,7 +85,7 @@ class ReGui(Tk):
         match box
         """
         self.loadfile()
-        matches = re.findall(self.reEntry.get('1.0', END), self.data)
+        matches = re.findall(self.reEntry.get('1.0', END), self.data, re.MULTILINE)
         self.reMatches.delete('1.0', END)
         if len(matches) == 0:
             self.reMatches.insert('1.0', 'No mathces.')
