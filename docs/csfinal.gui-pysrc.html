@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>csfinal.gui</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="csfinal-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="csfinal-module.html">Package&nbsp;csfinal</a> ::
+        Module&nbsp;gui
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="csfinal.gui-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="csfinal.gui-module.html">Module csfinal.gui</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno"> 1</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Tkinter</tt> <tt class="py-keyword">import</tt> <tt class="py-op">*</tt> </tt>
+<a name="L2"></a><tt class="py-lineno"> 2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt><tt class="py-op">,</tt> <tt class="py-name">sys</tt> </tt>
+<a name="L3"></a><tt class="py-lineno"> 3</tt>  <tt class="py-line"> </tt>
+<a name="MainGui"></a><div id="MainGui-def"><a name="L4"></a><tt class="py-lineno"> 4</tt> <a class="py-toggle" href="#" id="MainGui-toggle" onclick="return toggle('MainGui');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="csfinal.gui.MainGui-class.html">MainGui</a><tt class="py-op">(</tt><tt class="py-base-class">Tk</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MainGui-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="MainGui-expanded"><a name="MainGui.__init__"></a><div id="MainGui.__init__-def"><a name="L5"></a><tt class="py-lineno"> 5</tt> <a class="py-toggle" href="#" id="MainGui.__init__-toggle" onclick="return toggle('MainGui.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="csfinal.gui.MainGui-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-param">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="MainGui.__init__-collapsed" style="display:none;" pad="++" indent="++++++++"></div><div id="MainGui.__init__-expanded"><a name="L6"></a><tt class="py-lineno"> 6</tt>  <tt class="py-line">        <tt class="py-name">Tk</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Method csfinal.db.sqlite.DatabaseConnection.__init__()=csfinal.db.sqlite.DatabaseConnection-class.html#__init__,Method csfinal.display.progress.ProgressBar.__init__()=csfinal.display.progress.ProgressBar-class.html#__init__,Method csfinal.gui.MainGui.__init__()=csfinal.gui.MainGui-class.html#__init__,Method csfinal.re.gui.ReGui.__init__()=csfinal.re.gui.ReGui-class.html#__init__,Method csfinal.re.gui.ReHelp.__init__()=csfinal.re.gui.ReHelp-class.html#__init__,Method csfinal.searches.gui.SearchesGui.__init__()=csfinal.searches.gui.SearchesGui-class.html#__init__,Method csfinal.sorts.gui.SortsGui.__init__()=csfinal.sorts.gui.SortsGui-class.html#__init__"><a title="csfinal.db.sqlite.DatabaseConnection.__init__
+csfinal.display.progress.ProgressBar.__init__
+csfinal.gui.MainGui.__init__
+csfinal.re.gui.ReGui.__init__
+csfinal.re.gui.ReHelp.__init__
+csfinal.searches.gui.SearchesGui.__init__
+csfinal.sorts.gui.SortsGui.__init__" class="py-name" href="#" onclick="return doclink('link-0', '__init__', 'link-0');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-op">*</tt><tt class="py-name">args</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+<a name="L7"></a><tt class="py-lineno"> 7</tt>  <tt class="py-line"> </tt>
+<a name="L8"></a><tt class="py-lineno"> 8</tt>  <tt class="py-line">        <tt class="py-name">old_dir</tt> <tt class="py-op">=</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">getcwd</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L9"></a><tt class="py-lineno"> 9</tt>  <tt class="py-line">        <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">chdir</tt><tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">dirname</tt><tt class="py-op">(</tt><tt class="py-name">__file__</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> <tt class="py-comment"># Change to root package directory needed for __import__</tt> </tt>
+<a name="L10"></a><tt class="py-lineno">10</tt>  <tt class="py-line">        <tt class="py-comment"># Add buttons</tt> </tt>
+<a name="L11"></a><tt class="py-lineno">11</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">name</tt> <tt class="py-keyword">in</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">listdir</tt><tt class="py-op">(</tt><tt class="py-string">'.'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L12"></a><tt class="py-lineno">12</tt>  <tt class="py-line">            <tt class="py-name">button_name</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt> </tt>
+<a name="L13"></a><tt class="py-lineno">13</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">isdir</tt><tt class="py-op">(</tt><tt class="py-name">name</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">isfile</tt><tt class="py-op">(</tt><tt class="py-name">name</tt> <tt class="py-op">+</tt> <tt class="py-string">'/__init__.py'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> <tt class="py-comment"># if this directory is a package</tt> </tt>
+<a name="L14"></a><tt class="py-lineno">14</tt>  <tt class="py-line">                <tt class="py-name">mod</tt> <tt class="py-op">=</tt> <tt class="py-name">__import__</tt><tt class="py-op">(</tt>           <tt class="py-comment"># this means import name as mod</tt> </tt>
+<a name="L15"></a><tt class="py-lineno">15</tt>  <tt class="py-line">                    <tt class="py-name">name</tt><tt class="py-op">,</tt>                   <tt class="py-comment"># Name of the module</tt> </tt>
+<a name="L16"></a><tt class="py-lineno">16</tt>  <tt class="py-line">                    <tt class="py-name">globals</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">locals</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt>    <tt class="py-comment"># Context for the module (all the globlas and locals it can use)</tt> </tt>
+<a name="L17"></a><tt class="py-lineno">17</tt>  <tt class="py-line">                    <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">,</tt>                     <tt class="py-comment"># the from part</tt> </tt>
+<a name="L18"></a><tt class="py-lineno">18</tt>  <tt class="py-line">                    <tt class="py-number">0</tt>                       <tt class="py-comment"># 0 = absalute import only</tt> </tt>
+<a name="L19"></a><tt class="py-lineno">19</tt>  <tt class="py-line">                <tt class="py-op">)</tt> </tt>
+<a name="L20"></a><tt class="py-lineno">20</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-string">'_gui'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">mod</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt> <tt class="py-keyword">and</tt> <tt class="py-name">mod</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Variable csfinal.re._gui=csfinal.re-module.html#_gui,Variable csfinal.searches._gui=csfinal.searches-module.html#_gui,Variable csfinal.sorts._gui=csfinal.sorts-module.html#_gui"><a title="csfinal.re._gui
+csfinal.searches._gui
+csfinal.sorts._gui" class="py-name" href="#" onclick="return doclink('link-1', '_gui', 'link-1');">_gui</a></tt> <tt class="py-op">==</tt> <tt class="py-name">True</tt> <tt class="py-keyword">and</tt> <tt class="py-string">'main'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">mod</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">:</tt> </tt>
+<a name="L21"></a><tt class="py-lineno">21</tt>  <tt class="py-line">                    <tt class="py-keyword">if</tt> <tt class="py-string">'_gui_name'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">mod</tt><tt class="py-op">.</tt><tt class="py-name">__dict__</tt><tt class="py-op">:</tt> <tt class="py-name">button_name</tt> <tt class="py-op">=</tt> <tt class="py-name">mod</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Variable csfinal.re._gui_name=csfinal.re-module.html#_gui_name,Variable csfinal.searches._gui_name=csfinal.searches-module.html#_gui_name,Variable csfinal.sorts._gui_name=csfinal.sorts-module.html#_gui_name"><a title="csfinal.re._gui_name
+csfinal.searches._gui_name
+csfinal.sorts._gui_name" class="py-name" href="#" onclick="return doclink('link-2', '_gui_name', 'link-2');">_gui_name</a></tt> </tt>
+<a name="L22"></a><tt class="py-lineno">22</tt>  <tt class="py-line">                    <tt class="py-keyword">else</tt><tt class="py-op">:</tt> <tt class="py-name">button_name</tt> <tt class="py-op">=</tt> <tt class="py-name">name</tt> </tt>
+<a name="L23"></a><tt class="py-lineno">23</tt>  <tt class="py-line">                    <tt class="py-name">Button</tt><tt class="py-op">(</tt><tt class="py-name">master</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">,</tt> <tt class="py-name">text</tt> <tt class="py-op">=</tt> <tt class="py-name">button_name</tt><tt class="py-op">,</tt> <tt class="py-name">command</tt> <tt class="py-op">=</tt> <tt class="py-name">mod</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Function csfinal.gui.main()=csfinal.gui-module.html#main,Function csfinal.re.gui.main()=csfinal.re.gui-module.html#main,Function csfinal.searches.gui.main()=csfinal.searches.gui-module.html#main,Function csfinal.sorts.gui.main()=csfinal.sorts.gui-module.html#main"><a title="csfinal.gui.main
+csfinal.re.gui.main
+csfinal.searches.gui.main
+csfinal.sorts.gui.main" class="py-name" href="#" onclick="return doclink('link-3', 'main', 'link-3');">main</a></tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">pack</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L24"></a><tt class="py-lineno">24</tt>  <tt class="py-line"> </tt>
+<a name="L25"></a><tt class="py-lineno">25</tt>  <tt class="py-line">        <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">chdir</tt><tt class="py-op">(</tt><tt class="py-name">old_dir</tt><tt class="py-op">)</tt>   <tt class="py-comment"># Change to where we were</tt> </tt>
+<a name="L26"></a><tt class="py-lineno">26</tt>  <tt class="py-line"> </tt>
+<a name="L27"></a><tt class="py-lineno">27</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">mainloop</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L28"></a><tt class="py-lineno">28</tt>  <tt class="py-line"> </tt>
+<a name="main"></a><div id="main-def"><a name="L29"></a><tt class="py-lineno">29</tt> <a class="py-toggle" href="#" id="main-toggle" onclick="return toggle('main');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="csfinal.gui-module.html#main">main</a><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="main-collapsed" style="display:none;" pad="++" indent="++++"></div><div id="main-expanded"><a name="L30"></a><tt class="py-lineno">30</tt>  <tt class="py-line">    <tt id="link-4" class="py-name" targets="Class csfinal.gui.MainGui=csfinal.gui.MainGui-class.html"><a title="csfinal.gui.MainGui" class="py-name" href="#" onclick="return doclink('link-4', 'MainGui', 'link-4');">MainGui</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L31"></a><tt class="py-lineno">31</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="csfinal-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Tue May 28 06:49:58 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

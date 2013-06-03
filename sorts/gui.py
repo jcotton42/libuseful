@@ -26,17 +26,23 @@ class SortsGui(Tk):
         # Get sort types - this is a kludge, see if there's a better way
         old_dir = os.getcwd()
         os.chdir(os.path.dirname(__file__)) # Change to root package directory needed for __import__
-
+        print "getting algorithms."
         for name in os.listdir('.'): # get the files and folders in the current direcoty
             if name.endswith('.py'): # python files
+                print name,
                 modName = name[0:-3] # strip .py suffix
+                print modname,
                 if modName in ['__init__', '__main__', 'gui']: continue # thses files will not have any algorithims
                 mod = __import__(modName, globals(), locals(), [], -1) # see /gui.py for explanaton
                 if '_sort' in mod.__dict__ and isinstance(mod._sort, FunctionType): # if _sort exists and is callable
                     sortName = ''
-                    if '_sort_name' in mod.__dict__: sortName = mod._sort_name
-                    else: sortName = modName
+                    if '_sort_name' in mod.__dict__: 
+                        sortName = mod._sort_name
+                    print sortName,
+                    else: 
+                        sortName = modName
                     self.sortTypes[sortName] = mod._sort
+                    print mod._sort
 
         os.chdir(old_dir)
 
