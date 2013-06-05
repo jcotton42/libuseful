@@ -4,7 +4,7 @@ This is the gui for the sorts module
 from Tkinter import *
 from tkFileDialog import askopenfilename, asksaveasfilename
 from tkMessageBox import showerror, showinfo
-import os, csv
+import os, csv, sys
 
 class SortsGui(Tk):
     """
