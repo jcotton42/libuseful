@@ -13,6 +13,9 @@ class ProgressBar:
         width, character to indicate filled, character
         to indicate blank, and whether or not to show
         a percentage.
+        :param maximum: Maximum value of progress bar
+        :param start: Initial value
+        :param twidth: Number of characters wide
         """
         self.maximum   = maximum
         self.twidth    = twidth
@@ -25,6 +28,7 @@ class ProgressBar:
         """
         Update the progress bar with a new value. This also
         redraws the progress bar.
+        :param value: New value
         """
         if value > self.maximum:
             raise Exception("Value out of bounds")

@@ -16,6 +16,10 @@ def quick_sort(arr, key=lambda x:x):
     ... {"name": "Wumpus", "age": 15}], key=lambda x: x["age"])
     [{'age': 12, 'name': 'John Doe'}, {'age': 13, 'name': 'Fox'}, {'age': 15, 'name': 'Wumpus'}]
 
+    :param arr: What to sort
+    :type arr: list
+    :param key: Define how to sort
+    :type key: function
     :returns: Sorted list
     """
     if arr == []:

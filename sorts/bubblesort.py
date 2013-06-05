@@ -14,6 +14,8 @@ def bubble_sort(arr):
     >>> bubble_sort(['a', 'd', 'b', 'c'])
     ['a', 'b', 'c', 'd']
 
+    :param arr: List to sort
+    :type arr: list
     :returns: Sorted list
     """
     if arr == []: # No point in sorting an exmpty list

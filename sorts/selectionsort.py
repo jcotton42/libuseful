@@ -16,7 +16,7 @@ def selection_sort(arr, key=lambda x:x):
 
     :param arr: The list to sort
     :type arr: list
-    :param key: a method or lambda that returns the key value when sorting dictionaries
+    :param key: Define how to sort
     :type key: function
     :returns: Sorted list
     """

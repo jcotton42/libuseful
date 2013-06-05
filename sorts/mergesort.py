@@ -21,14 +21,16 @@ def _merge(l1, l2):
             l2 = l2[1:]
     return res
 
-def merge_sort(arr, key=lambda x:x):
+def merge_sort(arr):
     """
     Perform a mergesort on a given list. Return the sorted list.
     Example:
 
     >>> merge_sort([1, 5, 7, 2, 3, 4, 1])
     [1, 1, 2, 3, 4, 5, 7]
-
+    
+    :param arr: List to sort
+    :type arr: list
     :returns: Sorted list
     """
     if len(arr) < 2:
