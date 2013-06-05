@@ -44,7 +44,7 @@ class SortsGui(Tk):
         # Layout elemetns
 
         Label(self, text ='Sort type: ').grid(row=0, column=0, sticky=W)
-        OptionMenu(self, self.sortType, self.sortTypes.keys()[0], *self.sortTypes.keys()[1:]).grid(row=0, column=1, sticky=W)
+        OptionMenu(self, self.sortType, list(self.sortTypes.keys())[0], *list(self.sortTypes.keys())[1:]).grid(row=0, column=1, sticky=W)
 
         Label(self, text='Input type: ').grid(row=1, column=0, sticky=W)
         OptionMenu(self, self.inputType, 'List', 'Dictionary').grid(row=1, column=1, sticky=W)
