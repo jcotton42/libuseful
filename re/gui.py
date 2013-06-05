@@ -79,7 +79,7 @@ class ReGui(Tk):
         self.inputField
         Does not erase field if Cancel is pressed
         """
-        fileName = askopenfilename() # open an open file dialog, ask for the name
+        fileName = askopenfilename() # open an open file dialog, ask for name
         if fileName == '': return # pressing Cancel returns ''
         self.inputField.delete(0, END) # empty the field
         self.inputField.insert(0, fileName)
