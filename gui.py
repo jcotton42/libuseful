@@ -5,7 +5,7 @@ class MainGui(Tk):
         Tk.__init__(self, *args, **kwargs)
 
         old_dir = os.getcwd()
-        os.chdir(os.path.dirname(__file__)) # Change to root package directory needed for __import__
+        os.chdir(os.path.dirname(sys.argv[0])) # Change to root package directory needed for __import__
         # Add buttons
         for name in os.listdir('.'):
             button_name = ''
@@ -22,4 +22,5 @@ class MainGui(Tk):
                     Button(master = self, text = button_name, command = mod.main).pack()
         os.chdir(old_dir)   # Change to where we were
         self.mainloop()
-MainGui()
+def main():
+    MainGui()
