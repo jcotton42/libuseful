@@ -12,6 +12,11 @@ def linear_search(arr, target, key=lambda x:x):
 
     >>> linear_search([5, 2, 3, 1], 3)[0]
     2
+
+    :param arr: The array to search through
+    :param target: The target value
+    :param key: A function which defines how to search
+    :returns: A tuple in the form (index, target) 
     """
     for index, value in enumerate(arr):
         if key(value) == target:

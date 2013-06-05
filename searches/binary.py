@@ -18,6 +18,11 @@ def binary_search(arr, target, key=lambda x:x):
     5
     >>> binary_search([0, 1, 3, 4, 5], 2)[0]
     -1
+
+    :param arr: The array to search through
+    :param target: The target value
+    :param key: A function which defines how to search
+    :returns: A tuple in the form (index, target) 
     """
     upper_bound = len(arr)
     lower_bound = 0
