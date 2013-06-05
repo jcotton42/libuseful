@@ -14,8 +14,11 @@ def linear_search(arr, target, key=lambda x:x):
     2
 
     :param arr: The array to search through
+    :type arr: list
     :param target: The target value
+    :type target: object
     :param key: A function which defines how to search
+    :type key: function
     :returns: A tuple in the form (index, target) 
     """
     for index, value in enumerate(arr):
