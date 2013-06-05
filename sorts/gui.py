@@ -40,6 +40,8 @@ class SortsGui(Tk):
                     self.sortTypes[sortName] = mod._sort
 
         os.chdir(old_dir)
+        if len(self.sortTypes.keys()) == 0:
+            raise NotImplementedError("No sort definitions found")
 
         # Layout elemetns
 
