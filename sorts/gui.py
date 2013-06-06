@@ -10,8 +10,14 @@ class SortsGui(Tk):
     """
     Main window of application
     """
-    def __init__(self, *args, **kwargs):
-        Tk.__init__(self, *args, **kwargs)
+    def __init__(self, screenName=None, baseName=None, className='Tk',
+                 useTk=1, sync=0, use=None):
+        """
+        Constructs a new main window for the sorts gui
+        for info on paramaters see the docs for Tk.__init__
+        """
+        Tk.__init__(self, screenName, baseName, className,
+                 useTk, sync, use)
 
         self.data = None # the data to sort
         # Create fields
@@ -72,6 +78,11 @@ class SortsGui(Tk):
     def loadfile(self, csvData = None, **fmtparams):
         """
         Load the contents of file into the self.data variable
+
+        :param csvData: Whether or not the input data is in CSV format
+        :type csvData: bool
+        :param fmtparams: Format paramaters for the csv reader
+        :type fmtparams: dict
         """
         fileName = self.inputField.get()
         if fileName.endswith('.csv') and csvData is None: csvData = True
@@ -92,6 +103,12 @@ class SortsGui(Tk):
     def savefile(self, csvData = None, **fmtparams):
         """
         Saves the sorted list/dictionary to a file
+
+        :param csvData: Whether or not the output data should be saved in CSV \
+        format
+        :type csvData: bool
+        :param fmtparams: Format paramaters for the csv writer
+        :type fmtparams: dict
         """
         fileName = self.outputField.get()
         if fileName.endswith('.csv') and csvData is None: csvData = True
@@ -130,6 +147,9 @@ class SortsGui(Tk):
         """
         # Check the fields
         # This is where I wish ptyhon had a switch statment, oh well
+        if self.inputType.get() == 'Dictionary':
+            showerror('Not implemented', 'Dictionary support is not currently implemented')
+            return
         if self.sortType.get() == '':
             showerror('Missing sort type', 'Please specify a sort type')
             return
