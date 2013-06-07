@@ -1,8 +1,17 @@
+"""
+The GUI that launches all the subprograms
+"""
 from Tkinter import *
 import os, sys
+
 class MainGui(Tk):
+    """
+    Main window of application
+    """
     def __init__(self, *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
+
+        self.title('libuseful')
 
         old_dir = os.getcwd()
         os.chdir(os.path.dirname(sys.argv[0])) # Change to root package directory needed for __import__
@@ -19,8 +28,9 @@ class MainGui(Tk):
                 if '_gui' in mod.__dict__ and mod._gui == True and 'main' in mod.__dict__:
                     if '_gui_name' in mod.__dict__: button_name = mod._gui_name
                     else: button_name = name
-                    Button(master = self, text = button_name, command = mod.main).pack()
-        os.chdir(old_dir)   # Change to where we were
+                    Button(self, text=button_name, command=mod.main).pack()
+        os.chdir(old_dir) # Change to where we were
         self.mainloop()
+
 def main():
     MainGui()
