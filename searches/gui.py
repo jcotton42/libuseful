@@ -4,8 +4,17 @@ from tkFileDialog import *
 from tkMessageBox import *
 from .binary import *
 from .linear import *
+"""
+This file contains the searches GUI
+"""
 class SearchesGui(Tk):
+    """
+    Searches GUI for Libuseful
+    """
     def __init__(self, *args, **kwargs):
+        """
+        Create the GUI elements.
+        """
         Tk.__init__(self, *args, **kwargs)
 
         self.title("Searches")
@@ -40,6 +49,9 @@ class SearchesGui(Tk):
         self.mainloop()
 
     def loadfile(self):
+        """
+        Load a file into the GUI.
+        """
         f = open(self.file_field.get())
         self.litems = [i[:-1] for i in f.readlines()]
         self.litems.sort()
@@ -48,6 +60,9 @@ class SearchesGui(Tk):
         f.close()
 
     def pickfile(self):
+        """
+        Pick a file to load into the GUI.
+        """
         x = askopenfilename()
         if x == '':
             return
@@ -55,6 +70,9 @@ class SearchesGui(Tk):
         self.file_field.insert(0, x)
 
     def do_bsearch(self):
+        """
+        Perform binary search.
+        """
         self.loadfile()
         self.items.selection_clear(0, END)
         x = binary_search(self.litems, self.to_search_field.get())[0]
@@ -64,6 +82,9 @@ class SearchesGui(Tk):
         self.items.see(x)
 
     def do_lsearch(self):
+        """
+        Perform linear search.
+        """
         self.loadfile()
         self.items.selection_clear(0, END)
         x = linear_search(self.litems, self.to_search_field.get())[0]
@@ -73,6 +94,9 @@ class SearchesGui(Tk):
         self.items.see(x)
 
 def main():
+    """
+    Run the GUI.
+    """
     SearchesGui()
 
 if __name__ == '__main__':
