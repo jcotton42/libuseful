@@ -11,8 +11,16 @@ class ReGui(Tk):
     """
     Main window of the gui
     """
-    def __init__(self, *args, **kwargs):
-        Tk.__init__(self, *args, **kwargs)
+    def __init__(self, screenName=None, baseName=None, className='Tk',
+                 useTk=1, sync=0, use=None):
+        """
+        Constructs a new main window for the re gui
+        for info on paramaters see the docs for Tk.__init__
+        """
+        Tk.__init__(self, screenName, baseName, className,
+                 useTk, sync, use)
+
+        self.title('Regular Expressions')
 
         self.data = ''
 
@@ -21,26 +29,26 @@ class ReGui(Tk):
         self.reEntry = Text(self, width=60, height=10, wrap=NONE)
         self.reMatches = Text(self, width=60, height=10, wrap=NONE)
 
-        Label(self, text='Input type: ').grid(row=0, column=0, 
+        Label(self, text='Input type: ').grid(row=0, column=0,
                 sticky=W)
-        OptionMenu(self, self.inputType, 'File').grid(row=0, 
+        OptionMenu(self, self.inputType, 'File').grid(row=0,
                 column=1, sticky=W)
 
-        Label(self, text='Input file: ').grid(row=1, column=0, 
+        Label(self, text='Input file: ').grid(row=1, column=0,
                 sticky=W)
-        self.inputField.grid(row=1, column=1, columnspan=2, 
+        self.inputField.grid(row=1, column=1, columnspan=2,
                 sticky=W, ipadx=60)
-        Button(self, text='Browse...', command=self.getinputfiles).grid(row=1
-                , column=3, sticky=W)
-        Label(self, text='Regular expression:').grid(row=2, column=0, 
+        Button(self, text='Browse...', command=self.getinputfiles).grid(row=1,
+                column=3, sticky=W)
+        Label(self, text='Regular expression:').grid(row=2, column=0,
                 columnspan=4, sticky=W)
         self.reEntry.grid(row=3, column=0, columnspan=4, sticky=W)
 
-        self.scrollY = Scrollbar(self, orient=VERTICAL, 
+        self.scrollY = Scrollbar(self, orient=VERTICAL,
                 command=self.reEntry.yview)
         self.scrollY.grid(row=3, column=4, sticky=N+S+W)
 
-        self.scrollX = Scrollbar(self, orient=HORIZONTAL, 
+        self.scrollX = Scrollbar(self, orient=HORIZONTAL,
                 command=self.reEntry.xview)
         self.scrollX.grid(row=4, column=0, columnspan=4, sticky=N+E+W)
 
@@ -50,11 +58,11 @@ class ReGui(Tk):
         Label(self, text='Matches').grid(row=5, column=0, sticky=W)
         self.reMatches.grid(row=6, column=0, columnspan=4, sticky=W)
 
-        self.scrollY = Scrollbar(self, orient=VERTICAL, 
+        self.scrollY = Scrollbar(self, orient=VERTICAL,
                 command=self.reMatches.yview)
         self.scrollY.grid(row=6, column=4, sticky=N+S+W)
 
-        self.scrollX = Scrollbar(self, orient=HORIZONTAL, 
+        self.scrollX = Scrollbar(self, orient=HORIZONTAL,
                 command=self.reMatches.xview)
         self.scrollX.grid(row=7, column=0, columnspan=4, sticky=N+E+W)
 
@@ -75,7 +83,7 @@ class ReGui(Tk):
 
     def getinputfiles(self):
         """
-        Asks for a filename using an open dialog and sets the text of 
+        Asks for a filename using an open dialog and sets the text of
         self.inputField
         Does not erase field if Cancel is pressed
         """
@@ -97,7 +105,7 @@ class ReGui(Tk):
         match box
         """
         self.loadfile()
-        matches = re.findall(self.reEntry.get('1.0', END), 
+        matches = re.findall(self.reEntry.get('1.0', END),
                 self.data, re.MULTILINE)
         self.reMatches.delete('1.0', END)
         if len(matches) == 0:
@@ -111,6 +119,8 @@ class ReHelp(Toplevel):
     """
     def __init__(self, *args, **kwargs):
         Toplevel.__init__(self, *args, **kwargs)
+
+        self.title('Regular Expressions Help')
 
         Label(self, justify=LEFT, text="""
 Regex quick reference
@@ -129,5 +139,3 @@ For more search the web for 'python re'
 
 def main():
     ReGui()
-
-main()
