@@ -60,7 +60,7 @@ def test_sort(sort):
     """
     data = [9, 7, 5, 3, 1]
     expected = [1, 3, 5, 7, 9]
-    if quicksort.quick_sort(data) == expected:
+    if sort(data) == expected:
         return True
     else:
         return False

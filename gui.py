@@ -2,7 +2,7 @@
 The GUI that launches all the subprograms
 """
 from Tkinter import *
-import os, sys
+import os, sys, webbrowser
 
 class MainGui(Tk):
     """
@@ -29,7 +29,15 @@ class MainGui(Tk):
                     if '_gui_name' in mod.__dict__: button_name = mod._gui_name
                     else: button_name = name
                     Button(self, text=button_name, command=mod.main).pack()
+        docPathPy = os.getcwd() + '/docs/index.html'
+        docPathPy = 'file://' + docPathPy.replace('\\', '/')
+        Button(self, text='Open Python style docuemtation/API', command=lambda: webbrowser.open(docPathPy)).pack()
+
+        docPathJava = os.getcwd() + '/docs-epydoc/index.html'
+        docPathJava = 'file://' + docPathJava.replace('\\', '/')
+        Button(self, text='Open Java style docuemtation/API', command=lambda: webbrowser.open(docPathJava)).pack()
         os.chdir(old_dir) # Change to where we were
+
         self.mainloop()
 
 def main():

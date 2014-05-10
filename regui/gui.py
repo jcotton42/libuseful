@@ -123,16 +123,16 @@ class ReHelp(Toplevel):
         self.title('Regular Expressions Help')
 
         Label(self, justify=LEFT, text="""
-Regex quick reference
-* - Zero or more instances of the previous regex
-? - Zero or one instances of the previous regex
-[abc] - Match a, b, or c
-[^abc] - Match anytning but a, b, or c
-^abc - Match abc at the beginnig of a line
-abc$ - Match abc at the end of a line
-. - Match any character except newline
-For more search the web for 'python re'
-""".strip()).grid(row=0, column=0, sticky=W)
+            Regex quick reference
+            * - Zero or more instances of the previous regex
+            ? - Zero or one instances of the previous regex
+            [abc] - Match a, b, or c
+            [^abc] - Match anytning but a, b, or c
+            ^abc - Match abc at the beginnig of a line
+            abc$ - Match abc at the end of a line
+            . - Match any character except newline
+            For more search the web for 'python re'
+            """.strip()).grid(row=0, column=0, sticky=W)
 
         self.lift(self.master)
         self.focus()
