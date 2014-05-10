@@ -1,7 +1,7 @@
 """
 The GUI that launches all the subprograms
 """
-from Tkinter import *
+from tkinter import *
 import os, sys, webbrowser
 
 class MainGui(Tk):

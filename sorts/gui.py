@@ -1,9 +1,9 @@
 """
 This is the gui for the sorts module
 """
-from Tkinter import *
-from tkFileDialog import askopenfilename, asksaveasfilename
-from tkMessageBox import showerror, showinfo
+from tkinter import *
+from tkinter.filedialog import askopenfilename, asksaveasfilename
+from tkinter.messagebox import showerror, showinfo
 import os, csv, sys
 
 class SortsGui(Tk):
@@ -45,7 +45,7 @@ class SortsGui(Tk):
                     self.sortTypes[sortName] = mod._sort
 
         os.chdir(old_dir)
-        if len(self.sortTypes.keys()) == 0:
+        if len(list(self.sortTypes.keys())) == 0:
             raise NotImplementedError("No sort definitions found")
             # NotImplementedError used because no sorts were implemented
 
@@ -83,7 +83,7 @@ class SortsGui(Tk):
             self.data = []
             if csvData:
                 for row in csv.reader(inputFile, **fmtparams):
-                    map(self.data.append, row)
+                    list(map(self.data.append, row))
             else:
                 for line in inputFile.readlines():
                     self.data.append(line)
@@ -105,7 +105,7 @@ class SortsGui(Tk):
                 tmp = csv.writer(outputFile, **fmtparams)
                 tmp.writerow(self.data)
             else:
-                map(outputFile.write, self.data)
+                list(map(outputFile.write, self.data))
 
     def getinputfile(self):
         """

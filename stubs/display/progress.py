@@ -1,4 +1,4 @@
-from __future__ import division
+
 import sys
 class ProgressBar:
     def __init__(self, maximum=100, start=0, twidth=50):

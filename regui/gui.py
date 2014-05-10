@@ -3,8 +3,8 @@ This is the gui for the regular expression module
 """
 #TODO: multi-file search (use listbox for filenames)
 #TODO: re flags support
-from Tkinter import *
-from tkFileDialog import askopenfilename
+from tkinter import *
+from tkinter.filedialog import askopenfilename
 import re
 
 class ReGui(Tk):

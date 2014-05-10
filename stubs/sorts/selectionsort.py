@@ -2,7 +2,7 @@
 This module implements the selection sort algorithim
 """
 
-from __future__ import print_function
+
 
 def selection_sort(arr):
     """

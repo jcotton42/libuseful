@@ -2,7 +2,7 @@
 Testing script for libuseful
 """
 #pylint: disable-all
-from __future__ import print_function, absolute_import
+
 from .searches import linear
 from .searches import binary
 from .sorts import quicksort

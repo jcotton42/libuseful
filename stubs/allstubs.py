@@ -1,10 +1,10 @@
-from __future__ import *
+
 
 # window.py
 """
 Abstracts a GUI window
 """
-from Tkinter import *
+from tkinter import *
 class Window(Tk):
     def __init__(self):
         self.initgui()

@@ -1,7 +1,7 @@
 """
 Text-based progress bars.
 """
-from __future__ import division
+
 import sys
 class ProgressBar:
     """

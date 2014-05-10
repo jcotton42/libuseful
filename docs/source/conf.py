@@ -40,8 +40,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'libuseful'
-copyright = u'2013, Author'
+project = 'libuseful'
+copyright = '2013, Author'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -186,8 +186,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'libuseful.tex', u'libuseful Documentation',
-   u'Author', 'manual'),
+  ('index', 'libuseful.tex', 'libuseful Documentation',
+   'Author', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -216,8 +216,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'libuseful', u'libuseful Documentation',
-     [u'Author'], 1)
+    ('index', 'libuseful', 'libuseful Documentation',
+     ['Author'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -230,8 +230,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'libuseful', u'libuseful Documentation',
-   u'Author', 'libuseful', 'One line description of project.',
+  ('index', 'libuseful', 'libuseful Documentation',
+   'Author', 'libuseful', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -251,10 +251,10 @@ texinfo_documents = [
 # -- Options for Epub output ---------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'libuseful'
-epub_author = u'Author'
-epub_publisher = u'Author'
-epub_copyright = u'2013, Author'
+epub_title = 'libuseful'
+epub_author = 'Author'
+epub_publisher = 'Author'
+epub_copyright = '2013, Author'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.

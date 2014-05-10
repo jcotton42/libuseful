@@ -1,7 +1,7 @@
-from __future__ import absolute_import
-from Tkinter import *
-from tkFileDialog import *
-from tkMessageBox import *
+
+from tkinter import *
+from tkinter.filedialog import *
+from tkinter.messagebox import *
 from .binary import *
 from .linear import *
 """
